@@ -1,0 +1,28 @@
+ {{"Helm templating command"}} , {{"is cool dude!"}}
+  {{.Release.Name}}
+  {{.Template.Name}}
+  {{.Template.BasePath}}
+
+  {{.Values.name.companyname | default "set default" | upper }}
+
+  {{- if .Values.name.flag }}
+  {{.Values.name.companyname | default "CRMnext" | quote}}
+  {{- else -}}
+  {{"Output of else"}}
+  {{- end }}
+
+  {{- with .Values.name.values }}
+  {{- toYaml . | nindent 2 }}
+  {{- end}}
+
+  {{- $myAPP := .Values.name.values}}
+  {{- $myAPP}}
+loop_in_helm :
+  {{- range .Values.name.values}}
+     {{ . | upper}}
+  {{- end}}
+
+looping dict:
+{{- range $key,$value := .Values.image}}
+ - {{$key}}: {{$value | quote}}
+{{- end}}
