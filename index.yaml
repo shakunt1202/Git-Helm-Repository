@@ -1,0 +1,41 @@
+apiVersion: v1
+entries:
+  firstchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-07T17:38:08.8258155+05:30"
+    dependencies:
+    - condition: .Values.mysql.enabled
+      import-values:
+      - child: primary.service
+        parent: mysqlservice
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^8.8.1
+    description: A Helm chart for Kubernetes
+    digest: 8670bcafc32d566419e4b9d783715560316bd6deff8db8a5b1bc9d968da8c76f
+    icon: https://avatars.githubusercontent.com/u/13629408?s=200&v=4
+    keywords:
+    - chart demo chart
+    maintainers:
+    - email: shriraj.shakunt@gmail.com
+      name: CRM-shakunt
+    name: firstchart
+    sources:
+    - https://github.com/kubernetes/kubernetes
+    type: application
+    urls:
+    - firstchart-0.1.0.tgz
+    version: 0.1.0
+  secondchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-07T17:38:08.8264162+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 62c4f7ac529a33bc8500b4830601815acd8926e20175b0039f257b721eb43d2e
+    name: secondchart
+    type: application
+    urls:
+    - secondchart-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-04-07T17:38:08.8183676+05:30"
