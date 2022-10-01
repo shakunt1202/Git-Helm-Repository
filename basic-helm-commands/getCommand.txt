@@ -1,0 +1,26 @@
+the get command:
+This command consists of multiple subcommands which can be used to get extended information about the release.
+    The values used to generate the release
+    The generated manifest file
+    The notes provided by the chart of the release
+    The hooks associated with the release
+
+
+helm get all - download all information for a named release
+helm get hooks - download all hooks for a named release
+helm get manifest - download the manifest for a named release
+helm get notes - download the notes for a named release
+helm get values - download the values file for a named release
+
+
+helm get notes <name of installation>
+
+helm get values <name of installation> 
+this will get all the values provided by the user.
+
+helm get values <name of installation> --all
+this will get all the values for that release.
+
+helm get values <name of installation> --revision <revision number>
+this will get the values for a particular revision.
+

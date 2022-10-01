@@ -1,0 +1,6 @@
+Helm history command.
+
+helm history command will show us the revision history and if any error history of the installation.
+
+helm history <name of installation> 
+helm history <name of installation> --revision <revision number>

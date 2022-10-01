@@ -1,0 +1,10 @@
+when we want to replace the new pods completely then we will use --force flag. is the same as --delete-old-pods flag.
+
+when we do :
+helm upgrade mywebserver bitnami/apache --values <values.yaml> --set <values>
+this will replace pods where values are changed.
+
+if we want to replace all the pods then we use the --force flag.
+eg, helm upgrade mywebserver bitnami/apache --values <values.yaml> --set <values> --force
+
+--force flag will result in some downtime.

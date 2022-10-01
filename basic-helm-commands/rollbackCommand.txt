@@ -1,0 +1,14 @@
+This command rolls back a release to a previous revision.
+
+The first argument of the rollback command is the name of a release, and the second is a revision (version) number. 
+If this argument is omitted, it will roll back to the previous release.
+
+To see revision numbers, run 'helm history RELEASE'.
+helm rollback <RELEASE> [REVISION] [flags]
+
+eg, helm rollback mywebserver 1
+
+
+Suppose we uninstall the installation and use the flag --keep-history, we can rollback to the previous revision.
+helm uninstall <RELEASE> --keep-history
+helm rollback <RELEASE> <version> 

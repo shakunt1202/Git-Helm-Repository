@@ -1,0 +1,3 @@
+if we want to remove the failed upgrades then we can use the flag --cleanup-on-failure
+
+eg, helm upgrade mywebserver bitnami/apache --values <values.yaml> --set <values> --cleanup-on-failure
