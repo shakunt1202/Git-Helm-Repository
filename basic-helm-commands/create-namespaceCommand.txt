@@ -1,0 +1,8 @@
+create namespace command is used to create a new namespace and do installations in that.
+to create a new namespace while installation of any release:
+
+helm install mywebserver bitnami/apache --namespace mynamespace --create-namespace
+this will create a new namespace and do installation in that namespace.
+
+$ helm ls --namespace mynamespace
+to check the installation of any release in a namespace.

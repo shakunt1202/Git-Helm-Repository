@@ -1,0 +1,10 @@
+--generate-name                generate the name (and omit the NAME parameter)
+
+this will give a random name to the installed librarty.
+eg, helm install bitnami/apache --generate-name
+
+to control the naming we can use name template
+eg, helm install bitnami/apache --name-template "apache-{{.Release.Version}}"
+helm install bitnami/apache --generate-name --name-template "mywebserver-{{randAlpha 7 | lower}}"
+
+cant create a installation with upper case as kubernetes has issues with it.

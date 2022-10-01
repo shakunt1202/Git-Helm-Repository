@@ -1,0 +1,31 @@
+Helm release workflow:
+
+1. Load the charts and its dependencies.
+2. Parse the values.yml.
+3. Generate the yaml.
+4. Parse the yaml files to kube objects and validate.
+5. Generate the yaml and send to kube objects.
+
+
+To update the values.yaml or to provide our own values we can us ethe set attribute in the command.
+eg, helm installl mydb bitnami/mysql --set auth.rootPassword=<any value> --set auth.rootUser=<any value>
+
+
+
+-------------------------------------------------------------------------------
+How to do dry runs.
+dry run basically will go through all the phases except the 5th one.
+i.e, it won't generate the yaml files and deploy on kube.
+
+helm install mydb bitnami/mysql --dry-run
+
+Dry run is also used to check bugs.
+
+
+-------------------------------------------------------------------------------
+Helm templates:
+helm template mydb bitnami/mysql
+
+This will generate the yaml files for that image without sending anything to the kubernetes cluster. 
+SO this works without active kuberneres cluster as well.
+

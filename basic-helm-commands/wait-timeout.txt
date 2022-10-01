@@ -1,0 +1,16 @@
+--wait                         if set, will wait until all Pods, PVCs, Services, and minimum number 
+                               of Pods of a Deployment, StatefulSet, or ReplicaSet are in a ready state 
+                               before marking the release as successful. 
+It will wait for as long as --timeout
+by default it will wait for 300sec(5 mins). 
+after that installation will fail. 
+
+
+if we want to specify the time ourselves then,
+helm install mywebserver bitnami/apache --wait --timeout 5m10s
+
+
+helm install mywebserver bitnami/apache --atomic --wait --timeout 5m10s
+if atomic flag is specified it will wait for 5 mins and if the installations fails after that 
+then it will rollback to the previous sucessful installation.
+
